@@ -1,0 +1,281 @@
+@charset 'utf-8';
+/* *******reset Code******* */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+}
+td,
+th,
+caption {
+  font-size: 14px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  color: #555;
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+input,
+textarea,
+select,
+button {
+  font: 16px Verdana, Helvetica, Arial, sans-serif;
+}
+table {
+  border-collapse: collapse;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+i {
+  font-style: normal;
+}
+li {
+  display: inline-block;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+button {
+  cursor: pointer;
+  outline: none;
+}
+.zoomImage {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+}
+.table {
+  display: table;
+}
+.tableCell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fixWidth {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+.fullPage {
+  height: 100%;
+}
+.twoRow .cell {
+  width: 45%;
+  margin-right: 10%;
+}
+.threeRow .cell {
+  width: 31%;
+  margin-right: 3.5%;
+}
+.row-fix {
+  margin: 0;
+}
+.game-area {
+  margin: 50px auto;
+  width: 880px;
+}
+.game-area:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.game-area .canvas-contain {
+  position: relative;
+  width: 540px;
+  height: 540px;
+  float: left;
+}
+.game-area .canvas-contain .canvas-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  pointer-events: none;
+}
+.game-area .chess-contain {
+  box-sizing: content-box;
+  position: relative;
+  width: 504px;
+  height: 504px;
+  float: left;
+  background: #ffedcc;
+  border: 18px solid #ffedcc;
+}
+.game-area .chess-contain .chess-bg {
+  width: 504px;
+  height: 504px;
+  pointer-events: none;
+}
+.game-area .chess-contain .chess-bg td {
+  border: 1px solid #999;
+}
+.game-area .chess-contain .chess {
+  cursor: auto;
+  position: absolute;
+  z-index: 10;
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  background: black;
+  border-radius: 50px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+.game-area .chess-contain .chess.black {
+  background: black;
+}
+.game-area .chess-contain .chess.white {
+  background: white;
+}
+.game-area .chess-contain .animate-to-bottom {
+  opacity: 0;
+}
+.game-area .chess-contain .tips {
+  width: 36px;
+  height: 36px;
+  background: rgba(233, 184, 95, 0.3);
+  cursor: pointer;
+}
+.game-area .buttons-contain {
+  float: right;
+  width: 280px;
+}
+.game-area .buttons-contain .input-area {
+  float: left;
+  width: 100%;
+}
+.game-area .buttons-contain .input-area:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.game-area .buttons-contain .input-area .text {
+  float: left;
+  background: #ffedcc;
+  display: block;
+  width: 45%;
+  margin: 10px 2.5%;
+  line-height: 40px;
+  padding-left: 10px;
+  text-align: center;
+}
+.game-area .buttons-contain .input-area .text.disable {
+  background: #ddd;
+}
+.game-area .buttons-contain .input-area .step-num {
+  float: left;
+  display: block;
+  width: 45%;
+  margin: 10px 2.5%;
+  height: 40px;
+  outline: none;
+  text-align: center;
+  font-size: 13px;
+}
+.game-area .buttons-contain .button {
+  float: left;
+  width: 45%;
+  margin: 10px 2.5%;
+  line-height: 40px;
+  background: #ffedcc;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+.game-area .buttons-contain .button:hover {
+  border-color: #ad6831;
+}
+.game-area .buttons-contain .button.on {
+  border-color: #ad6831;
+}
+.game-area .buttons-contain .disable {
+  background: #ddd;
+  cursor: default;
+}
+.game-area .buttons-contain .disable:hover {
+  border-color: transparent;
+}
+.game-area .buttons-contain .disable.on {
+  border-color: transparent;
+}
